@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+    <title> Global </title>
+</head>
+<body>
+    <header>
+        <nav class="Platform">
+            <p class="Global Xanh"> Global Finance inc. </p>
+            <div class="manage">
+                <p class="timestamp Xanh"> {{timestamp}} MSC </p>
+                <img class="userAccountSite" src="{{ url_for('static', path='/images/account.svg') }}" />
+            </div>
+        </nav>
+        <center class="regCenter Xanh">
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3"> Немного о вас ...  </h4>
+                <form class="needs-validation" novalidate method="POST">
+                  <div class="row g-3">
+                    <div class="col-sm-6">
+                      <label for="firstName" class="form-label">Имя</label>
+                      <input type="text" class="form-control" name="username" pattern="[A-Za-z]{3}" required>
+                    </div>
+        
+                    <div class="col-sm-6">
+                      <label for="lastName" class="form-label">Фамилия</label>
+                      <input type="text" class="form-control" name="lastname"  required>
+                    </div>
+        
+                    <div class="col-12 mt-4">
+                      <div class="input-group has-validation">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" name="shortTag" placeholder="Короткий таг" minlength="4"
+                        maxlength="20" size="20" required>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mt-4">
+                        <input type="password" class="form-control" name="password" placeholder="Пароль" required minlength="4"
+                        maxlength="12" size="12">
+                        <div class="invalid-feedback">
+                          Please enter a valid email address for shipping updates.
+                        </div>
+                      </div>
+        
+                    <div class="col-12 mt-4">
+                      <input type="email" class="form-control" name="email" placeholder="ваша@почта.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                      <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                      </div>
+                    </div>
+        
+                    <div class="col-12 mt-4">
+                      <input type="text" class="form-control" name="tax" placeholder="ИНН" required>
+                      <div class="invalid-feedback">
+                        Please enter your shipping address.
+                      </div>
+                    </div>
+        
+                    <div class="col-12 mt-4">
+                      <input type="text" class="form-control" name="phone_number" placeholder="Телефон" required>
+                    </div>    
+                  </div>
+
+                  <div class="manage1">
+                  <div class="col-16 mt-4">
+                      <select class="form-select" aria-label="Default select example" name="role">
+                        <option selected> Выберите должность </option>
+                        <option value="Admin"> Администратор </option>
+                        <option value="Director"> Директор </option>
+                        <option value="Cashier"> Кассир </option>
+                      </select>
+                    </div>
+
+                    <div class="col-8 mt-4">
+                      <select class="form-select" aria-label="Default select example" name="obj">
+                        <option selected> Выберите объект </option>
+                        <option value="Casher"> Кешер </option>
+                        <option value="Oskar"> Оскар </option>
+                        <option value="Tula"> м. Тульская </option>
+                        <option value="Sbor"> Сбор </option>
+                      </select>
+                    </div>
+                  </div>  
+        
+                  <hr class="my-4">
+        
+                  <button class="w-50 btn btn-success btn-lg" type="submit"> Продолжить для проверки </button>
+                </form>
+              </div>
+        </center>
+        <style> 
+          .manage1 {
+            width: 40%;
+            display: flex;
+            justify-content: space-evently;
+            align-items: center;
+        }
+      </style>
+    </header>
+</body>
+</html>
